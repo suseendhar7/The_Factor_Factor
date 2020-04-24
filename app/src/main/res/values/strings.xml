@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">The Factor Factor</string>
+    <string name="get_input">Enter Number</string>
+    <string name="input_key">Send</string>
+    <string name="streak">Streak :</string>
+    <string name="submit">Submit</string>
+</resources>
