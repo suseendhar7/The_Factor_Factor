@@ -69,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
         return a;
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Log.d(TAG, "onCreate: app started");
@@ -102,13 +103,17 @@ public class MainActivity extends AppCompatActivity {
         streakDisplay.setText(streakCount);
 
         HighScore = preferences.getString("score", "0");
-        score1.setText(HighScore);
-        score2.setText(String.valueOf(currScore));
+        score1.setText("HighScore " + HighScore);
+        score2.setText("Score " + currScore);
 
         score1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "HighScore " + HighScore, Toast.LENGTH_SHORT).show();
+                if ( Integer.parseInt(HighScore) <= currScore)
+                    Toast.makeText(MainActivity.this, "HighScore " + HighScore + "\n    Streak "
+                            + currCnt, Toast.LENGTH_SHORT).show();
+                else
+                    Toast.makeText(MainActivity.this, "HighScore " + HighScore, Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -116,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this, "Current Score " + currScore +
-                        "\nCurrent Streak " + currCnt, Toast.LENGTH_SHORT).show();
+                        "\n       Streak " + currCnt, Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -262,12 +267,12 @@ public class MainActivity extends AppCompatActivity {
                                 if ((currScore > Integer.parseInt(HighScore))) {
                                     editor.putString("score", String.valueOf(currScore));
                                     editor.apply();
-                                    score1.setText(String.valueOf(currScore));
-                                    score2.setText(String.valueOf(currScore));
+                                    score1.setText("HighScore " + currScore);
+                                    score2.setVisibility(View.INVISIBLE);
                                 } else {
                                     HighScore = preferences.getString("score", "0");
-                                    score1.setText(HighScore);
-                                    score2.setText(String.valueOf(currScore));
+                                    score1.setText("HighScore " + HighScore);
+                                    score2.setText("Score " + currScore);
                                 }
                                 Handler handler = new Handler();
                                 handler.postDelayed(new Runnable() {

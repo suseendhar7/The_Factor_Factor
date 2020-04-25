@@ -26,7 +26,7 @@
         android:id="@+id/radioGroup"
         android:layout_width="168dp"
         android:layout_height="156dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="60dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.539"
         app:layout_constraintStart_toStartOf="parent"
@@ -98,7 +98,7 @@
         android:layout_marginTop="68dp"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.875"
+        app:layout_constraintHorizontal_bias="0.83"
         app:layout_constraintStart_toEndOf="@+id/streak"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -110,7 +110,7 @@
         android:layout_marginEnd="30dp"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.964"
+        app:layout_constraintHorizontal_bias="0.957"
         app:layout_constraintStart_toEndOf="@+id/streak"
         app:layout_constraintTop_toBottomOf="@+id/hScore" />
 
