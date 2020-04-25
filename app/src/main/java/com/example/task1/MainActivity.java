@@ -309,6 +309,6 @@ public class MainActivity extends AppCompatActivity {
             public void run() {
                 finish();
             }
-        }, 2600);
+        }, 2700);
     }
 }

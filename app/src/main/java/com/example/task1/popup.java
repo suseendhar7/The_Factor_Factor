@@ -37,6 +37,6 @@ public class popup extends Activity {
             public void run() {
                 finish();
             }
-        }, 2300);
+        }, 2400);
     }
 }
